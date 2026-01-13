@@ -1,0 +1,180 @@
+.section {
+    height: 300vh;
+    position: relative;
+    background-color: transparent;
+}
+
+.stickyContainer {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.backgroundLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Text Content Area */
+.textWrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+    /* Let clicks pass through to video if needed */
+}
+
+.textContent {
+    pointer-events: auto;
+    /* Re-enable clicks for buttons */
+}
+
+.title {
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+}
+
+.rotatingWrapper {
+    display: inline-block;
+    position: relative;
+    height: 1.1em;
+    /* Adjust based on line-height */
+    overflow: hidden;
+    vertical-align: top;
+    /* Align with other text */
+}
+
+.rotatingText {
+    display: inline-block;
+    backface-visibility: hidden;
+    transform-origin: 50% 50% -20px;
+    /* Axis for 3D flip */
+}
+
+.gradient {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+}
+
+.cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btnPrimary,
+.btnSecondary {
+    padding: 18px 36px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btnPrimary {
+    background: var(--text-primary);
+    color: white;
+    border: 2px solid var(--text-primary);
+}
+
+.btnSecondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border-medium);
+}
+
+/* Visual Container (The Image/Video) */
+.visualContainer {
+    position: absolute;
+    /* Initial position will be handled by Framer Motion logic or calc */
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 5;
+    text-align: center;
+}
+
+.playButton {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+}
+
+.label {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 968px) {
+    .textWrapper {
+        grid-template-columns: 1fr;
+        padding-top: 100px;
+        /* Space for image on top? Or text first? */
+        align-items: start;
+    }
+
+    .textContent {
+        margin-top: 400px;
+        /* push text down if image is top */
+        text-align: center;
+    }
+
+    .cta {
+        justify-content: center;
+    }
+}

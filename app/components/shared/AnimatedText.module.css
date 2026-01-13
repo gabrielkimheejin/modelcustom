@@ -1,0 +1,29 @@
+.animatedText {
+    display: inline-block;
+}
+
+.char {
+    display: inline-block;
+    opacity: 0;
+    transform: translate3d(0, 20px, 0) scale(0.95);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.charVisible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+.fadeInUpWrapper {
+    display: inline-block;
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fadeInUpWrapper.visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}

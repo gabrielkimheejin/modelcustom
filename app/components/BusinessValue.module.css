@@ -1,0 +1,110 @@
+.section {
+    padding: 120px 0;
+    background: var(--bg-secondary);
+}
+
+.container {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.comparison {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.comparisonItem {
+    background: var(--bg-primary);
+    padding: 48px 40px;
+    border: 2px solid var(--border-light);
+    border-radius: 16px;
+    text-align: center;
+}
+
+.comparisonItem.highlighted {
+    border-color: var(--accent-primary);
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.15);
+    position: relative;
+}
+
+.comparisonItem.highlighted::before {
+    content: 'RECOMMENDED';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-gradient);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.comparisonLabel {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.comparisonValue {
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 800;
+    margin-bottom: 32px;
+    color: var(--text-primary);
+}
+
+.highlighted .comparisonValue {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.comparisonFeatures {
+    list-style: none;
+    text-align: left;
+}
+
+.comparisonFeatures li {
+    padding: 12px 0;
+    font-size: 15px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.comparisonFeatures li:last-child {
+    border-bottom: none;
+}
+
+.comparisonFeatures li::before {
+    content: '✓';
+    margin-right: 12px;
+    color: var(--accent-primary);
+    font-weight: 700;
+}
+
+.arrow {
+    font-size: 48px;
+    color: var(--text-tertiary);
+}
+
+@media (max-width: 968px) {
+    .comparison {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+        text-align: center;
+    }
+}

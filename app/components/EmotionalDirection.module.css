@@ -1,0 +1,52 @@
+.content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mainTitle {
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+}
+
+.description {
+    font-size: clamp(16px, 2vw, 22px);
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 60px;
+}
+
+.emotions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.emotionTag {
+    padding: 16px 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.emotionTag:hover {
+    background: var(--accent-gradient);
+    border-color: transparent;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+@media (max-width: 768px) {
+    .emotionTag {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+}

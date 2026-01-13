@@ -1,0 +1,55 @@
+.content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mainTitle {
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+}
+
+.description {
+    font-size: clamp(16px, 2vw, 22px);
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 80px;
+}
+
+.qualityMetrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.metricValue {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.metricLabel {
+    font-size: 14px;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+    .qualityMetrics {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}

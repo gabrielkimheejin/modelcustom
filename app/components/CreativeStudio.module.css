@@ -1,0 +1,42 @@
+.content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mainTitle {
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: var(--text-primary);
+}
+
+.highlight {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.description {
+    font-size: clamp(16px, 2vw, 22px);
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 60px;
+}
+
+.studioPreview {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.studioImage {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.studioImage:hover {
+    transform: translateY(-10px);
+}

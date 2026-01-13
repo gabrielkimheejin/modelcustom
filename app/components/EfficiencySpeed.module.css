@@ -1,0 +1,140 @@
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mainTitle {
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+}
+
+.description {
+    font-size: clamp(16px, 2vw, 22px);
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 80px;
+}
+
+.comparison {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.comparisonItem {
+    flex: 1;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.comparisonItem.highlighted {
+    background: rgba(102, 126, 234, 0.05);
+    /* Softer fill */
+    border: 2px solid #5B4DFF;
+    /* Strong distinct border */
+    box-shadow: 0 10px 40px rgba(91, 77, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    /* transform removed - handled by Framer Motion */
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(90deg, #5B4DFF, #8E2DE2);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 10px rgba(91, 77, 255, 0.4);
+    z-index: 2;
+}
+
+/* Glass Sheen Animation */
+.comparisonItem.highlighted::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent);
+    transform: skewX(-25deg);
+    animation: sheen 3s infinite;
+}
+
+@keyframes sheen {
+    0% {
+        left: -150%;
+    }
+
+    50% {
+        left: 150%;
+    }
+
+    100% {
+        left: 150%;
+    }
+
+    /* Pause phase */
+}
+
+.comparisonLabel {
+    font-size: 14px;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+.comparisonValue {
+    font-size: clamp(32px, 4vw, 56px);
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.highlighted .comparisonValue {
+    color: #5B4DFF;
+    /* Solid brand color for visibility */
+    text-shadow: 0 0 20px rgba(91, 77, 255, 0.3);
+    /* Glow text */
+}
+
+.highlighted .comparisonLabel {
+    color: #5B4DFF;
+    opacity: 0.8;
+}
+
+.comparisonArrow {
+    font-size: 40px;
+    color: var(--accent-primary);
+}
+
+@media (max-width: 768px) {
+    .comparison {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .comparisonArrow {
+        transform: rotate(90deg);
+    }
+}

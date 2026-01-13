@@ -1,0 +1,63 @@
+/* Glow Animation */
+.glow .title {
+    animation: luxuriousGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes luxuriousGlow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    to {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* Base styles remain */
+.heading {
+    margin-bottom: 60px;
+}
+
+.heading.center {
+    text-align: center;
+}
+
+.heading.left {
+    text-align: left;
+}
+
+.number {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.title {
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 800px;
+}
+
+.center .subtitle {
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .heading {
+        margin-bottom: 40px;
+    }
+}
